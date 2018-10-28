@@ -1,4 +1,4 @@
-(defproject jp.nijohando/fs "0.1.0-SNAPSHOT"
+(defproject jp.nijohando/fs "0.1.0"
   :description "java.nio.file.Path friendly file system utilities for Clojure"
   :url "https://github.com/nijohando/fs"
   :min-lein-version "2.0.0"
