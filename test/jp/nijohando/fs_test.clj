@@ -1,4 +1,5 @@
 (ns jp.nijohando.fs-test
+  (:refer-clojure :exclude [resolve])
   (:require [clojure.test :as t :refer [run-tests is are deftest testing use-fixtures]]
             [clojure.java.io :as jio]
             [jp.nijohando.fs :as fs :refer [*cwd*]])
@@ -109,8 +110,10 @@
       (doseq [x xs]
         (is (instance? Path x)))
       (is (= (fs/path *cwd*) (first xs)))
-      (is (= (fs/path *cwd* "foo.txt") (second xs)))
-      (is (= (fs/path *cwd* "bar.txt") (nth xs 2))))))
+      (let [files (->> (rest xs)
+                       (sort))]
+        (is (= (fs/path *cwd* "bar.txt") (first files)))
+        (is (= (fs/path *cwd* "foo.txt") (second files)))))))
 
 (deftest symbolic-link?
   (testing "Symbolic link must be true"

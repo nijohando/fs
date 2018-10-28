@@ -10,13 +10,13 @@ java.nio.file.Path friendly fs utilities for Clojure
 #### Ligningen / Boot
 
 ```clojure
-[jp.nijohando/fs "0.1.0-SNAPSHOT"]
+[jp.nijohando/fs "0.1.0"]
 ```
 
 #### Clojure CLI / deps.edn
 
 ```clojure
-jp.nijohando/fs {:mvn/version "0.1.0-SNAPSHOT"}
+jp.nijohando/fs {:mvn/version "0.1.0"}
 ```
 
 ## License
